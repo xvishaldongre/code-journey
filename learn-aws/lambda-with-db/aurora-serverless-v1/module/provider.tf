@@ -11,4 +11,11 @@ terraform {
 provider "aws" {
   region = "us-east-1"
   alias  = "region"
+  default_tags {
+    tags = {
+      managed_by = "terraform"
+      Owner      = "Vishal Dongre"
+      Project    = "aurora-serverless-v1"
+    }
+  }
 }
