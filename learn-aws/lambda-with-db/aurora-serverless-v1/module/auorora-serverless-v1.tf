@@ -3,7 +3,7 @@ resource "aws_rds_cluster" "default" {
   engine                  = "aurora-mysql"
   engine_mode             = "serverless"
   database_name           = var.db_name
-  enable_http_endpoint    = var.enable_http_endpoint
+  enable_http_endpoint    = var.db_enable_http_endpoint 
   master_username         = local.db_creds.db_username # Length 1–16 and don't use "-"
   master_password         = local.db_creds.db_password # Don't use /, ", a space, and @)
   backup_retention_period = var.db_backup_retention_period

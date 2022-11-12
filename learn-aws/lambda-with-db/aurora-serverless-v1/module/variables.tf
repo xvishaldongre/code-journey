@@ -37,20 +37,20 @@ variable "db_backup_retention_period" {
 
 variable "db_timeout_action" {
   type        = string
-  description = "ForceApplyCapacityChange"
-  default     = "The action to take when the timeout is reached. Valid values: ForceApplyCapacityChange, RollbackCapacityChange"
+  description = "The action to take when the timeout is reached. Valid values: ForceApplyCapacityChange, RollbackCapacityChange"
+  default     = "ForceApplyCapacityChange"
 }
 
 variable "db_auto_pause" {
   type        = bool
-  description = true
-  default     = "Whether to enable automatic pause."
+  description = "Whether to enable automatic pause."
+  default     = true
 }
 
 variable "db_enable_http_endpoint" {
   type        = bool
-  description = true
-  default     = "Enable HTTP endpoint (data API)"
+  description = "Enable HTTP endpoint (data API)"
+  default     = true
 }
 
 # Secrets Manager
