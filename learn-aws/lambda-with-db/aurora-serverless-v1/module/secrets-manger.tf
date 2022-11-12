@@ -20,8 +20,3 @@ locals {
     data.aws_secretsmanager_secret_version.creds.secret_string
   )
 }
-
-output "username" {
-  value = local.db_creds.db_username
-  sensitive = true
-}

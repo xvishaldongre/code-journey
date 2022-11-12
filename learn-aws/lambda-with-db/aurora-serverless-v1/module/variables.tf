@@ -35,14 +35,34 @@ variable "db_backup_retention_period" {
   default     = 1
 }
 
-variable "ecr_repo" {
+variable "db_timeout_action" {
   type        = string
-  description = "Name of the ECR repo"
-  default     = "ecr-aurora-serverless-v1"
+  description = "ForceApplyCapacityChange"
+  default     = "The action to take when the timeout is reached. Valid values: ForceApplyCapacityChange, RollbackCapacityChange"
 }
 
-variable "labmda_name" {
+variable "db_auto_pause" {
+  type        = bool
+  description = true
+  default     = "Whether to enable automatic pause."
+}
+
+variable "db_enable_http_endpoint" {
+  type        = bool
+  description = true
+  default     = "Enable HTTP endpoint (data API)"
+}
+
+# Secrets Manager
+
+variable "sm_name" {
   type        = string
-  description = "Name of the ECR repo"
-  default     = "lamda-aurora-serverless-v1"
+  description = "Name of the new secret."
+  default     = "auorora-serverless-v1-db-creds"
+}
+
+variable "sm_description" {
+  type        = string
+  description = "Description of the secret"
+  default     = "Credentials for Aurora Serverless DB"
 }
